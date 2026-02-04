@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auction Details</title>
+  <!-- Fonts & UI -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/auction.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <svg class="logo" width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#3b82f6"/><path d="M6 12h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span>Orji Auction</span>
+    </a>
+
+    <!-- CSS-first hamburger control (works without JS) -->
+    <input id="nav-toggle-control" class="nav-toggle-input" type="checkbox" aria-hidden="true">
+    <label for="nav-toggle-control" class="nav-toggle" aria-hidden="true" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </label>
+
+    <nav class="nav-links">
+      <a href="marketplace.html">Marketplace</a>
+      <a href="login.html" class="btn btn-ghost">Login</a>
+      <a href="register.html" class="btn">Register</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="auction-layout">
+    <div class="media">
+      <img id="image" alt="Auction image">
+    </div>
+
+    <div class="auction-info">
+      <h2 id="title"></h2>
+      <p class="price" id="price"></p>
+      <p class="timer" id="timer"></p>
+
+      <div class="bid-box">
+        <input type="number" id="bidAmount" placeholder="Enter bid amount" aria-label="Bid amount">
+        <button class="btn" id="placeBidBtn" type="button">Place Bid</button>
+      </div>
+
+      <h3>Bid History</h3>
+      <ul id="history"></ul>
+    </div>
+  </div>
+</div>
+
+<script src="js/config/init.js"></script>
+<script src="js/auth/header.js"></script>
+<script type="module" src="js/auction/auctionDetails.js"></script>
+
+</body>
+</html>

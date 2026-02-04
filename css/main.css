@@ -168,7 +168,19 @@ input:focus, textarea:focus {
 /* ===== Small screens ===== */
 @media (max-width: 800px) {
   .auction-layout { grid-template-columns: 1fr; }
-  .header-inner { padding: 10px 0; }
-  .nav-links { display: none; }
+  .header-inner { padding: 10px 0; position: relative; }
+
+  /* hamburger button */
+  .nav-toggle { display: inline-flex; background: transparent; border: none; color: #c7d2fe; align-items:center; justify-content:center; padding:8px; border-radius:8px; cursor:pointer; margin-left: 8px; }
+  .nav-toggle-input { display: none; }
+
+  /* CSS-only behavior: show nav when checkbox is checked */
+  #nav-toggle-control:checked ~ .nav-links { display: flex; }
+  #nav-toggle-control:checked + .nav-toggle { color: #fff; }
+
+  /* mobile nav dropdown */
+  .nav-links { display: none; position: absolute; top: calc(100% + 8px); right: 12px; background: rgba(2,6,23,0.95); padding: 12px; border-radius: 10px; flex-direction: column; min-width: 180px; box-shadow: 0 12px 30px rgba(2,6,23,0.3); }
+  .nav-links.open { display: flex; }
+  .nav-links a { margin: 8px 0; color: #c7d2fe; }
   .brand span { font-size: 16px; }
-}
+} 
