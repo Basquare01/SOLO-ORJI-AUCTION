@@ -4,11 +4,12 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  const admin = JSON.parse(localStorage.getItem("admin"));
-  const users = JSON.parse(localStorage.getItem("users"));
+  // Safely parse admin and users
+  const admin = JSON.parse(localStorage.getItem("admin") || "null");
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
 
-  // Admin login
-  if (email === admin.email && password === admin.password) {
+  // Admin login (only if admin exists)
+  if (admin && email === admin.email && password === admin.password) {
     localStorage.setItem("currentUser", JSON.stringify({
       email: admin.email,
       role: "admin"

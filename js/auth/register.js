@@ -5,7 +5,8 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  const users = JSON.parse(localStorage.getItem("users"));
+  // Safely parse users (default to empty array if missing)
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
 
   // Prevent duplicate email
   if (users.some(u => u.email === email)) {
